@@ -1,0 +1,35 @@
+pipeline {
+agent any 
+stages {
+stage('valiadte') {
+steps {
+echo'validate the structure'
+  }
+}
+stage('compile') {
+steps {
+echo'compile the src'
+  }
+}
+stage('test') {
+steps {
+echo'testing completed'
+  }
+}
+stage('package') {
+steps {
+echo'build success'
+  }
+}
+stage('verify') {
+steps {
+echo'verification done' 
+  }
+}
+stage('install') {
+steps {
+echo'installation done'
+    }
+  }
+}
+}
