@@ -1,0 +1,33 @@
+pipeline {
+  agent any
+  stages {
+    stage('update system') {
+steps {
+  script {
+  sh'sudo yum update -y'
+  }
+  }
+  }
+stage('install Httpd') {
+steps {
+  script {
+  sh'sudo yum install httpd -y'
+  }
+}
+}
+stage(start_enable Httpd') {
+  steps {
+script {
+sh'sudo systemctl start httpd'
+  }
+  }
+  }
+stage('status Httpd') {
+steps {
+  script {
+  sh'sudo systemctl status httpd'
+  }
+}
+}
+}
+}
